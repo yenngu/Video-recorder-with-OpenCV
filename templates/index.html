@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Recorder with OpenCV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#video-feed">Live Feed</a></li>
+                    <li><a href="#recording-controls">Controls</a></li>
+                    <li><a href="#recorded-videos">Recorded Videos</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="video-feed">
+                <h1>Live Video Feed</h1>
+                <div class="video-container">
+                    <img id="videoFeed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+                </div>
+            </section>
+
+            <section id="recording-controls">
+                <div class="controls">
+                    <button id="startRecording">Start Recording</button>
+                    <button id="stopRecording">Stop Recording</button>
+                </div>
+            </section>
+
+            <section id="recorded-videos">
+                <h2>Recorded Videos</h2>
+                <ul id="videoList" class="video-list"></ul>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
